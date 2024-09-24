@@ -6,9 +6,14 @@ const folders = document.querySelectorAll('#output .folder'); // Sélectionne to
 function updateSelection() {
     folders.forEach((folder, index) => {
         if (index === currentIndex) {
-            folder.style.backgroundColor = '#b3d4fc'; // Change la couleur de fond pour indiquer la sélection
+            folder.style.backgroundColor = '#00ff00'; // Change la couleur de fond pour indiquer la sélection
+            folder.style.color = '#000'; // Change la couleur du texte pour indiquer la sélection
+            folder.style.padding = '10px';
+            folder.style.borderRadius = '2px';
         } else {
             folder.style.backgroundColor = 'transparent'; // Réinitialise la couleur de fond
+            folder.style.color = '#00ff00'; // Change la couleur du texte pour indiquer la sélection
+            folder.style.padding = '10px';
         }
     });
 }

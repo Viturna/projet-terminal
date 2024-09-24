@@ -8,18 +8,17 @@
 </head>
 <body>
     <div id="terminal">
-        <div id="output">Dossier3</div>
-         <!-- Conteneur pour centrer la barre -->
-        <div id="progress-bar-container">
-            <div id="progress-bar">0%</div>
+        <div id="output">
+          <span class="center">Article</span>
         </div>
-        <!-- <div id="input-area">
+        <div id="input-area">
             <span id="prompt">> </span>
             <input type="text" id="command-input" autofocus>
-        </div> -->
+        </div>
         <div id="timer"></div>
     </div>
 
-    <script src="assets/js/barreChargement.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/changeCharacters.js"></script>
 </body>
 </html>

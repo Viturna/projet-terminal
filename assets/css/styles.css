@@ -61,3 +61,28 @@ body {
 .reverse {
     transform: rotate(180deg); /* Inverse le texte verticalement */
 }
+
+/* Barre de chargement en position absolue */
+#progress-bar-container {
+  position: absolute; /* Positionnement absolu pour le centre de la page */
+  top: 50%; /* Positionner à 50% de la hauteur */
+  left: 50%; /* Positionner à 50% de la largeur */
+  transform: translate(-50%, -50%); /* Centrer parfaitement avec une translation */
+  width: 50%; /* Largeur à 50% de la page */
+  background-color: #333; /* Fond gris foncé pour contraster avec la barre verte */
+  border: 2px solid #00ff00; /* Bordure verte rétro */
+  border-radius: 3px; /* Légèrement arrondie */
+  height: 25px;
+  overflow: hidden; /* Masque tout débordement pour une transition propre */
+}
+
+#progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #00ff00; /* Vert fluorescent pour le style rétro */
+  text-align: left;
+  padding-left: 5px;
+  box-sizing: border-box;
+  line-height: 25px; /* Centrer verticalement le texte */
+  color: black; /* Texte noir pour le contraste avec la barre verte */
+}

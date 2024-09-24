@@ -8,10 +8,9 @@
 </head>
 <body>
     <div id="terminal">
-        <div id="output">Message d'accueil
-
-        <br>
-        <img src="/assets/img/logo_Onu.svg" alt="">
+        <div id="output">
+          <span class="center">Dossier1</span>
+          <span id="changeCharacters">Carac</span>
         </div>
         <div id="input-area">
             <span id="prompt">> </span>
@@ -21,5 +20,6 @@
     </div>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/changeCharacters.js"></script>
 </body>
 </html>

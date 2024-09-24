@@ -1,0 +1,63 @@
+/* styles.css */
+body {
+  background-color: #000;
+  color: #00ff00;
+  font-family: monospace;
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Hauteur de la page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/assets/img/bg.jpg');
+}
+
+#terminal {
+  background-color: #000;
+  color: #00ff00;
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #00ff00;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+#output {
+  overflow-y: auto;
+  flex: 1;
+  padding-bottom: 10px;
+  white-space: pre-wrap;
+  transition: .2s;
+}
+
+#input-area {
+  display: flex;
+  align-items: center;
+}
+
+#prompt {
+  margin-right: 5px;
+}
+
+#command-input {
+  background: none;
+  border: none;
+  color: #00ff00;
+  outline: none;
+  width: 100%;
+  font-family: monospace;
+  caret-color: #00ff00; /* Pour que le curseur soit visible */
+  caret-shape: block;
+}
+
+.center{
+  display: block;
+  text-align: center;
+}
+.reverse {
+    transform: rotate(180deg); /* Inverse le texte verticalement */
+}

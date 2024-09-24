@@ -8,11 +8,7 @@
 </head>
 <body>
     <div id="terminal">
-        <div id="output">Message d'accueil
-
-        <br>
-        <img src="/assets/img/logo_Onu.svg" alt="">
-        </div>
+        <div id="output">Dossier6</div>
         <div id="input-area">
             <span id="prompt">> </span>
             <input type="text" id="command-input" autofocus>

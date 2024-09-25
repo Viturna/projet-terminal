@@ -11,19 +11,16 @@
 <body>
   <div id="terminal">
     <div id="progress-bar-container">
-        <div id="progress-bar">0%</div>
+      <div id="progress-bar">0%</div>
     </div>
     <div id="output">
       <span class="center">Dossier1</span>
-      <div id="output">
-        <span id="changeCharacters"></span>
-        <div id="article-list">
-          <div class="select">/DOC : [article1]</div>
-          <div class="select">/DOC : [article2]</div>
-          <div class="select">/DOC : [article3]</div>
-        </div>
+      <span id="changeCharacters"></span>
+      <div id="article-list">
+        <div class="select">/DOC : [article1]</div>
+        <div class="select">/DOC : [article2]</div>
+        <div class="select">/DOC : [article3]</div>
       </div>
-
       <div id="article-display" style="display: none;">
         <div id="game">
           <canvas id="board"></canvas>
@@ -47,7 +44,7 @@
   <script src="assets/js/changeCharacters.js"></script>
   <script src="assets/js/articles.js"></script>
   <script src="assets/js/snake.js"></script>
-
+  <script src="assets/js/barreChargement.js"></script>
 </body>
 
 </html>

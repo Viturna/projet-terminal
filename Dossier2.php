@@ -11,19 +11,26 @@
 <body>
   <div id="terminal">
     <div id="progress-bar-container">
-        <div id="progress-bar">0%</div>
+      <div id="progress-bar">0%</div>
     </div>
     <div id="output">
       <span class="center">Dossier2</span>
+      <span id="changeCharacters"></span>
       <div id="article-list">
-        <button onclick="loadArticle('article1.json')">Article 1</button>
-        <button onclick="loadArticle('article2.json')">Article 2</button>
+        <div class="select">/DOC : [article1]</div>
+        <div class="select">/DOC : [article2]</div>
+        <div class="select">/DOC : [article3]</div>
       </div>
-      <div id="article-display">
-        <canvas class="game" id="board"></canvas>
-        <h2 id="article-title"></h2>
-        <p id="article-content"></p>
+      <div id="article-display" style="display: none;">
+        <div id="game">
+
+        </div>
+        <div id="article-box" style="display: none;">
+          <h2 id="article-title"></h2>
+          <p id="article-content"></p>
+        </div>
       </div>
+
 
     </div>
     <div id="input-area">
@@ -32,9 +39,8 @@
     </div>
     <div id="timer"></div>
   </div>
-
   <script src="assets/js/script.js"></script>
-  <script src="assets/js/snake.js"></script>
+  <script src="assets/js/articles.js"></script>
   <script src="assets/js/barreChargement.js"></script>
 </body>
 

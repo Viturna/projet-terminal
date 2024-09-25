@@ -57,10 +57,20 @@ function loadArticle(fileName) {
       document.getElementById('article-title').textContent = article.title;
       document.getElementById('article-content').textContent = article.content;
 
+      if (article.image) {
+        image = article.image; // Met à jour l'image de Morpion
+        document.getElementById("morpion-image").src = image; // Met à jour l'élément image dans le DOM
+      }
+
+      if (article.key) {
+        currentKey = article.key; // Met à jour la variable du mot clé
+      }
+
       //Difficulté snaaaake
       if (article.difficulty) {
         difficulty = article.difficulty; // Met à jour la difficulté de Snake
       }
+
       // Afficher la div de l'article
       document.getElementById('article-display').style.display = 'block';
 

@@ -12,25 +12,33 @@
         <div id="progress-bar">0%</div>
     </div>
     <div id="output">
-        Dossier4
-        <p class="select">/DOC : [Article1]</p>
-        <p class="select">/DOC : [Article2]</p>
-        <p class="select">/DOC : [Article3]</p>
-
+        <span class="center">Dossier1</span>
+        <div id="article-list">
+            <div class="select">/DOC : [article4]</div>
+            <div class="select">/DOC : [article5]</div>
+            <div class="select">/DOC : [article6]</div>
+        </div>
         <div id="article-display" style="display: none;">
-            <h2 id="article-title"></h2>
-            <p id="article-content"></p>
+            <div id="game" class="center">
+                <p>Pour découvrir le contenu de cet article à toi de trouver le mot gagnant !</p>
+                <img id="morpion-image" src="" alt="photo de morpion" alt="photo de morpion" style="height : 400px;">
+            </div>
+            <div id="article-box" style="display: none;">
+                <h2 id="article-title"></h2>
+                <p id="article-content"></p>
+            </div>
         </div>
     </div>
-        <div id="input-area">
-            <span id="prompt">> </span>
-            <input type="text" id="command-input" autofocus>
-        </div>
-        <div id="timer"></div>
+    <div id="input-area">
+        <span id="prompt">> </span>
+        <input type="text" id="command-input" autofocus>
+    </div>
+    <div id="timer"></div>
     </div>
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/articles.js"></script>
+    <script src="assets/js/morpion.js"></script>
     <script src="assets/js/barreChargement.js"></script>
 </body>
 </html>

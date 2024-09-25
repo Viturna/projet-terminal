@@ -10,7 +10,7 @@
 
 <body>
   <div id="terminal">
-    <div id="progress-bar-container">
+  <div id="progress-bar-container">
       <div id="progress-bar">0%</div>
     </div>
     <div id="output">
@@ -26,6 +26,7 @@
 
         </div>
         <div id="article-box" style="display: none;">
+          <div id="message">Mot incorrect. Veuillez réessayer.</div>
           <h2 id="article-title"></h2>
           <p id="article-content"></p>
         </div>
@@ -40,6 +41,7 @@
     <div id="timer"></div>
   </div>
   <script src="assets/js/script.js"></script>
+  <script src="assets/js/keyword.js"></script>
   <script src="assets/js/articles.js"></script>
   <script src="assets/js/barreChargement.js"></script>
 </body>

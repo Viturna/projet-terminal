@@ -1,5 +1,6 @@
 {
   "title": "Article 2",
   "content": "Ceci est le contenu de l'article 1. Vous pouvez y mettre n'importe quel texte que vous voulez.",
-  "difficulty": 4
+  "difficulty": 4,
+    "keyword": "serpent"
 }

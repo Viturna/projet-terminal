@@ -1,5 +1,5 @@
 let blockSize = 25;
-let total_row = 17; //total row number
+let total_row = 17; // Nombre total de lignes
 let total_col = 17;
 let board;
 let context;
@@ -19,6 +19,7 @@ let gameOver = false;
 let gameWin = false;
 
 let difficulty = 2;
+let score = 0; // Nouvelle variable de score
 
 function startSnakeGame() {
   // Initialiser le canvas et les variables
@@ -35,19 +36,19 @@ function startSnakeGame() {
   snakeBody = [];
   gameOver = false;
   gameWin = false;
+  score = 0; // Réinitialiser le score
 
   placeFood();
   document.addEventListener("keyup", changeDirection);
   setInterval(update, 1000 / 10);
 }
 
-
 function update() {
     if (gameOver) {
         return;
     }
     if (gameWin) {
-      document.getElementById('board').style.display = 'none';
+      document.getElemenxtById('board').style.display = 'none';
       document.getElementById('article-box').style.display = 'block';
       return;
   }
@@ -61,6 +62,7 @@ function update() {
     if (snakeX == foodX && snakeY == foodY) {
         snakeBody.push([foodX, foodY]);
         placeFood();
+        score++;
     }
 
     for (let i = snakeBody.length - 1; i > 0; i--) {
@@ -81,22 +83,25 @@ function update() {
         context.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize, blockSize);
     }
 
+    context.font = "20px Arial";
+    context.fillStyle = "white";
+    context.textAlign = "left";
+    context.fillText("Score: " + score, 10, 20);
+
     if (snakeX < 0
         || snakeX > total_col * blockSize
         || snakeY < 0
         || snakeY > total_row * blockSize) {
 
         gameOver = true;
-        alert("Game Over");
-        location.reload();
+        displayGameOver();
     }
 
     for (let i = 0; i < snakeBody.length; i++) {
         if (snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1]) {
 
             gameOver = true;
-            alert("Game Over");
-            location.reload();
+            displayGameOver();
         }
     }
 }
@@ -123,6 +128,32 @@ function changeDirection(e) {
 function placeFood() {
     foodX = Math.floor(Math.random() * total_col) * blockSize;
     foodY = Math.floor(Math.random() * total_row) * blockSize;
+}
+
+function displayGameOver() {
+  context.fillStyle = "rgba(0, 0, 0, 0.7)";
+  context.fillRect(0, 0, board.width, board.height);
+
+  context.font = "50px Arial";
+  context.fillStyle = "red";
+  context.textAlign = "center";
+  context.fillText("Game Over", board.width / 2, board.height / 2 - 20);
+
+  let countdown = 3;
+  const countdownInterval = setInterval(() => {
+    context.clearRect(0, board.height / 2 + 50, board.width, 50);
+
+    context.font = "40px Arial";
+    context.fillStyle = "white";
+    context.fillText(countdown, board.width / 2, board.height / 2 + 80);
+
+    countdown--;
+
+    if (countdown < 0) {
+      clearInterval(countdownInterval);
+      location.reload();
+    }
+  }, 1000);
 }
 
 window.startSnakeGame = startSnakeGame;

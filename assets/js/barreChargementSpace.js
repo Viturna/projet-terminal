@@ -1,13 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const inputAera = document.getElementById('input-area');
-    const bar = document.getElementById('progress-bar-container');
     const progressBar = document.getElementById('progress-bar');
-    const output = document.getElementById('output'); // Récupère le div output
-    output.style.display = 'none';
-    inputAera.style.display = 'none';
-
     let progress = 0;
-    let speed = 30; // Vitesse initiale (plus le nombre est grand, plus c'est lent)
+    let speed = 1500; // Vitesse initiale (plus le nombre est grand, plus c'est lent)
 
     // Fonction pour mettre à jour la barre de progression
     function updateProgressBar() {
@@ -19,13 +13,18 @@ document.addEventListener('DOMContentLoaded', function () {
             // Relance la fonction à la vitesse définie
             setTimeout(updateProgressBar, speed);
         } else {
-            // Une fois la barre remplie à 100%, afficher le contenu de output
-            inputAera.style.display = 'flex';
-            output.style.display = 'block'; // Affiche le contenu du div output
-            bar.style.display = 'none'; 
+            // Une fois la barre remplie à 100%, redirection vers l'article
+            window.location.href = 'article.php'; // Redirection vers l'article
         }
     }
 
     // Démarrer la barre de chargement au chargement de la page
     updateProgressBar();
+
+    // Accélérer la barre de progression quand l'utilisateur appuie sur "espace"
+    document.addEventListener('keydown', function (event) {
+        if (event.code === 'Space') {
+            progress += 15; // Réduit la vitesse pour accélérer la barre
+        }
+    });
 });

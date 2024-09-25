@@ -18,7 +18,7 @@
     <p class="folder">/DOC : [Dossier5]</p>
     <p class="folder">/DOC : [Dossier6]</p>
     <p class="folder">/DOC : [Dossier7]</p>
-</div>
+  </div>
 
     <!-- <div id="input-area">
             <span id="prompt">> </span>

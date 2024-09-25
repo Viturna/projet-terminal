@@ -10,6 +10,9 @@
 
 <body>
   <div id="terminal">
+    <div id="progress-bar-container">
+        <div id="progress-bar">0%</div>
+    </div>
     <div id="output">
       <span class="center">Dossier1</span>
       <div id="output">

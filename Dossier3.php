@@ -8,10 +8,11 @@
 </head>
 <body>
     <div id="terminal">
-        <div id="output">Dossier3</div>
-         <!-- Conteneur pour centrer la barre -->
         <div id="progress-bar-container">
             <div id="progress-bar">0%</div>
+        </div>
+        <div id="output">
+            Dossier3
         </div>
         <!-- <div id="input-area">
             <span id="prompt">> </span>
@@ -20,6 +21,6 @@
         <div id="timer"></div>
     </div>
 
-    <script src="assets/js/barreChargement.js"></script>
+    <script src="assets/js/barreChargementSpace.js"></script>
 </body>
 </html>

@@ -10,6 +10,9 @@
 
 <body>
   <div id="terminal">
+    <div id="progress-bar-container">
+        <div id="progress-bar">0%</div>
+    </div>
     <div id="output">
       <span class="center">Dossier2</span>
       <div id="article-list">
@@ -32,6 +35,7 @@
 
   <script src="assets/js/script.js"></script>
   <script src="assets/js/snake.js"></script>
+  <script src="assets/js/barreChargement.js"></script>
 </body>
 
 </html>

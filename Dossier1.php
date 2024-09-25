@@ -10,19 +10,22 @@
 
 <body>
   <div id="terminal">
+    <div id="progress-bar-container">
+        <div id="progress-bar">0%</div>
+    </div>
     <div id="output">
       <span class="center">Dossier1</span>
       <div id="output">
-    <div class="select"><span id="changeCharacters">/DOC : [article1]</span></div>
-    <div class="select">/DOC : [article2]</div>
-    <div class="select">/DOC : [article3]</div>
-</div>
+        <div class="select"><span id="changeCharacters">/DOC : [article1]</span></div>
+        <div class="select">/DOC : [article2]</div>
+        <div class="select">/DOC : [article3]</div>
+      </div>
 
-<div id="article-display" style="display: none;">
-    <img src="" alt="">
-    <h2 id="article-title"></h2>
-    <p id="article-content"></p>
-</div>
+      <div id="article-display" style="display: none;">
+          <img src="" alt="">
+          <h2 id="article-title"></h2>
+          <p id="article-content"></p>
+      </div>
 
 
     </div>
@@ -36,6 +39,7 @@
   <script src="assets/js/script.js"></script>
   <script src="assets/js/changeCharacters.js"></script>
   <script src="assets/js/articles.js"></script>
+  <script src="assets/js/barreChargement.js"></script>
 </body>
 
 </html>

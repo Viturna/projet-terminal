@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Accélérer la barre de progression quand l'utilisateur appuie sur "espace"
     document.addEventListener('keydown', function (event) {
         if (event.code === 'Space') {
-            speed = 30; // Réduit la vitesse pour accélérer la barre
+            progress += 15; // Réduit la vitesse pour accélérer la barre
         }
     });
 });

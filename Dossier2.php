@@ -12,7 +12,16 @@
   <div id="terminal">
     <div id="output">
       <span class="center">Dossier2</span>
-      <canvas id="board"></canvas>
+      <div id="article-list">
+        <button onclick="loadArticle('article1.json')">Article 1</button>
+        <button onclick="loadArticle('article2.json')">Article 2</button>
+      </div>
+      <div id="article-display">
+        <canvas class="game" id="board"></canvas>
+        <h2 id="article-title"></h2>
+        <p id="article-content"></p>
+      </div>
+
     </div>
     <div id="input-area">
       <span id="prompt">> </span>

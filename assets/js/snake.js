@@ -17,6 +17,8 @@ let foodY;
 
 let gameOver = false;
 
+let difficulty = 2;
+
 window.onload = function () {
     board = document.getElementById("board");
     board.height = total_row * blockSize;

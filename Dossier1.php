@@ -22,7 +22,7 @@
         <div class="select">/DOC : [article3]</div>
       </div>
       <div id="article-display" style="display: none;">
-        <div id="game">
+        <div id="game" class="center">
           <canvas id="board"></canvas>
         </div>
         <div id="article-box" style="display: none;">

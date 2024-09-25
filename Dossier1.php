@@ -13,16 +13,23 @@
     <div id="output">
       <span class="center">Dossier1</span>
       <div id="output">
-    <div class="select"><span id="changeCharacters">/DOC : [article1]</span></div>
-    <div class="select">/DOC : [article2]</div>
-    <div class="select">/DOC : [article3]</div>
-</div>
+        <span id="changeCharacters"></span>
+        <div id="article-list">
+          <div class="select">/DOC : [article1]</div>
+          <div class="select">/DOC : [article2]</div>
+          <div class="select">/DOC : [article3]</div>
+        </div>
+      </div>
 
-<div id="article-display" style="display: none;">
-    <img src="" alt="">
-    <h2 id="article-title"></h2>
-    <p id="article-content"></p>
-</div>
+      <div id="article-display" style="display: none;">
+        <div id="game">
+          <canvas id="board"></canvas>
+        </div>
+        <div id="article-box" style="display: none;">
+          <h2 id="article-title"></h2>
+          <p id="article-content"></p>
+        </div>
+      </div>
 
 
     </div>
@@ -36,6 +43,8 @@
   <script src="assets/js/script.js"></script>
   <script src="assets/js/changeCharacters.js"></script>
   <script src="assets/js/articles.js"></script>
+  <script src="assets/js/snake.js"></script>
+
 </body>
 
 </html>

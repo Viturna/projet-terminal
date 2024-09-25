@@ -50,7 +50,16 @@ function handleCommand($command)
       }
 
     case 'back': // Commande pour revenir à la page précédente
-      return json_encode(['action' => 'history.back']);
+      if (count($_SESSION['path_history']) > 0) {
+        $_SESSION['current_path'] = array_pop($_SESSION['path_history']);
+        $current_path = $_SESSION['current_path'];
+        return "Retour au répertoire précédent : " . $current_path;
+      } else {
+        return "Pas d'historique pour revenir en arrière.";
+      }
+
+    case 'exit':
+      return json_encode(['action' => 'reload']);
 
     case 'pwd': // Commande pour afficher le répertoire actuel
       return $current_path;
@@ -65,7 +74,7 @@ function handleCommand($command)
       return json_encode(['message' => 'L\'affichage a été inversé!', 'action' => 'toggleDinnerbone']);
 
     case 'dinnerborne': // Commande pour inverser l'affichage
-        return json_encode(['message' => '!', 'action' => 'toggleDinnerborne']);
+      return json_encode(['message' => '!', 'action' => 'toggleDinnerborne']);
 
     default:
       return "Commande non reconnue.";

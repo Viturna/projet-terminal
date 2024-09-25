@@ -23,12 +23,16 @@ function sendCommand(command) {
         const jsonResponse = JSON.parse(response); // Tente d'analyser la réponse JSON
         if (jsonResponse.redirect) {
           window.location.href = jsonResponse.redirect; // Redirige si une redirection est fournie
+        } else if (jsonResponse.action === 'history.back') {
+          history.back();
         } else if (jsonResponse.action === 'toggleDinnerbone') {
           toggleDinnerboneEffect();
           updateTerminal(jsonResponse.message);
         } else if (jsonResponse.action === 'toggleDinnerborne') {
           toggleDinnerborneEffect();
           updateTerminal(jsonResponse.message);
+        } else if (jsonResponse.action === 'reload') {
+          window.location.reload();
         } else {
           updateTerminal(jsonResponse); // Met à jour le terminal avec la sortie
         }

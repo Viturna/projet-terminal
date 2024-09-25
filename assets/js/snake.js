@@ -16,24 +16,41 @@ let foodX;
 let foodY;
 
 let gameOver = false;
+let gameWin = false;
 
 let difficulty = 2;
 
-window.onload = function () {
-    board = document.getElementById("board");
-    board.height = total_row * blockSize;
-    board.width = total_col * blockSize;
-    context = board.getContext("2d");
+function startSnakeGame() {
+  // Initialiser le canvas et les variables
+  board = document.getElementById("board");
+  board.height = total_row * blockSize;
+  board.width = total_col * blockSize;
+  context = board.getContext("2d");
 
-    placeFood();
-    document.addEventListener("keyup", changeDirection);
-    setInterval(update, 1000 / 10);
+  // Réinitialiser les variables
+  snakeX = blockSize * 5;
+  snakeY = blockSize * 5;
+  speedX = 0;
+  speedY = 0;
+  snakeBody = [];
+  gameOver = false;
+  gameWin = false;
+
+  placeFood();
+  document.addEventListener("keyup", changeDirection);
+  setInterval(update, 1000 / 10);
 }
+
 
 function update() {
     if (gameOver) {
         return;
     }
+    if (gameWin) {
+      document.getElementById('board').style.display = 'none';
+      document.getElementById('article-box').style.display = 'block';
+      return;
+  }
 
     context.fillStyle = "green";
     context.fillRect(0, 0, board.width, board.height);
@@ -52,6 +69,9 @@ function update() {
     if (snakeBody.length) {
         snakeBody[0] = [snakeX, snakeY];
     }
+    if (snakeBody.length == difficulty) {
+      gameWin = true;
+    }
 
     context.fillStyle = "white";
     snakeX += speedX * blockSize;
@@ -68,6 +88,7 @@ function update() {
 
         gameOver = true;
         alert("Game Over");
+        location.reload();
     }
 
     for (let i = 0; i < snakeBody.length; i++) {
@@ -75,6 +96,7 @@ function update() {
 
             gameOver = true;
             alert("Game Over");
+            location.reload();
         }
     }
 }
@@ -102,3 +124,5 @@ function placeFood() {
     foodX = Math.floor(Math.random() * total_col) * blockSize;
     foodY = Math.floor(Math.random() * total_row) * blockSize;
 }
+
+window.startSnakeGame = startSnakeGame;

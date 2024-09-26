@@ -17,7 +17,6 @@
     </div>
     <div id="output">
       <span class="center">Dossier1</span>
-      <span id="changeCharacters"></span>
       <div id="article-list">
         <div class="select">/DOC : [article1]</div>
         <div class="select">/DOC : [article2]</div>

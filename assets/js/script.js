@@ -48,11 +48,11 @@ function sendCommand(command) {
 // Fonction pour afficher la commande dans le terminal
 function displayCommand(command) {
   const outputDiv = document.getElementById('output');
-  const articleDisplay = document.getElementById('article-display');
+  // const articleDisplay = document.getElementById('article-display');
 
-  if (articleDisplay.style.display === 'block') {
-    return;
-  }
+  // if (articleDisplay.style.display === 'block') {
+  //   return;
+  // }
 
   outputDiv.innerHTML += `<div><span>> </span>${command}</div>`;
   outputDiv.scrollTop = outputDiv.scrollHeight;

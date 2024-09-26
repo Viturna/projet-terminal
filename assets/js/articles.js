@@ -1,7 +1,7 @@
 // Variables pour la navigation
 let currentIndex = 0; // Indice de l'élément sélectionné
 const selects = document.querySelectorAll('#output .select'); // Sélectionne tous les dossiers
-
+let boolGame = true;
 // Fonction pour mettre à jour la sélection
 function updateSelection() {
   selects.forEach((select, index) => {
@@ -66,19 +66,31 @@ function loadArticle(fileName) {
         currentKey = article.key; // Met à jour la variable du mot clé
       }
 
+      if (article.numberKey) {
+        currentKey = article.numberKey; 
+      }
+
       //Difficulté snaaaake
       if (article.difficulty) {
         difficulty = article.difficulty; // Met à jour la difficulté de Snake
       }
-
-      // Afficher la div de l'article
-      document.getElementById('article-display').style.display = 'block';
+      
+      boolGame = article.game;
+      
+      if(boolGame){
+        document.getElementById('article-display').style.display = 'block';
+      }else{
+        document.getElementById('article-display').style.display = 'block';
+        document.getElementById('game').style.display = 'none';
+        document.getElementById('article-box').style.display = 'block';
+      }
 
       document.getElementById('article-list').style.display = 'none';
 
       document.getElementById('input-area').style.display = 'flex';
 
       startSnakeGame();
+
     } else if (xhr.readyState === 4) {
       document.getElementById('article-title').textContent = "Erreur";
       document.getElementById('article-content').textContent = "Impossible de charger l'article.";

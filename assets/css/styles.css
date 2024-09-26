@@ -61,6 +61,9 @@ body {
 .reverse {
     transform: rotate(180deg); /* Inverse le texte verticalement */
 }
+#article-box{
+  display: none;
+}
 
 /* Barre de chargement en position absolue */
 #loader{

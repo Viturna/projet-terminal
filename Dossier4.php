@@ -21,6 +21,7 @@
         <div class="select">/DOC : [article4]</div>
         <div class="select">/DOC : [article5]</div>
         <div class="select">/DOC : [article6]</div>
+        <div class="select">/DOC : [article4-4]</div>
       </div>
       <div id="article-display" style="display: none;">
         <div id="game" class="center">

@@ -76,6 +76,25 @@ function handleCommand($command)
     case 'dinnerborne': // Commande pour inverser l'affichage
       return json_encode(['message' => '!', 'action' => 'toggleDinnerborne']);
 
+    case 'rename': // Commande pour renommer un dossier
+      if (isset($command_parts[1]) && isset($command_parts[2])) {
+        $old_name = $command_parts[1];
+        $new_name = $command_parts[2];
+
+        // Vérifie si le dossier existe dans les noms enregistrés
+        if (isset($_SESSION['folder_names'][$old_name])) {
+          // Renomme le dossier
+          $_SESSION['folder_names'][$new_name] = $_SESSION['folder_names'][$old_name];
+          unset($_SESSION['folder_names'][$old_name]); // Supprime l'ancien nom
+
+          return "Dossier renommé de '$old_name' en '$new_name'.";
+        } else {
+          return "Dossier '$old_name' non trouvé.";
+        }
+      } else {
+        return "Usage : rename [ancien_nom] [nouveau_nom]";
+      }
+
     default:
       return "Commande non reconnue.";
   }

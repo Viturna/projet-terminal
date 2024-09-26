@@ -2,6 +2,7 @@
   "title": "Article 1",
   "content": "Ceci est le contenu de l'article 1. Vous pouvez y mettre n'importe quel texte que vous voulez.",
   "difficulty": 2,
+  "game": true,
   "keyword": "serpent",
   "keyword-display": "Mot-clé: reptile"
 }

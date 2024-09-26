@@ -18,9 +18,9 @@
     <div id="output">
       <span class="center">Dossier1</span>
       <div id="article-list">
-        <div class="select">/DOC : [article1]</div>
-        <div class="select">/DOC : [article2]</div>
-        <div class="select">/DOC : [article3]</div>
+        <div class="select">/DOC : [article1-1]</div>
+        <div class="select">/DOC : [article1-2]</div>
+        <div class="select">/DOC : [article1-3]</div>
       </div>
       <div id="article-display" style="display: none;">
         <div id="game" class="center">
@@ -32,12 +32,11 @@
         </div>
       </div>
 
-
     </div>
-    <div id="input-area">
+    <!-- <div id="input-area">
       <span id="prompt">> </span>
       <input type="text" id="command-input" autofocus>
-    </div>
+    </div> -->
     <div id="timer"></div>
   </div>
 

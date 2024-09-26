@@ -43,7 +43,7 @@
 
   <script src="assets/js/script.js"></script>
   <script src="assets/js/articles.js"></script>
-  <script src="assets/js/morpion.js"></script>
+  <script src="assets/js/keyword.js"></script>
   <script src="assets/js/barreChargement.js"></script>
 </body>
 

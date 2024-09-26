@@ -48,9 +48,16 @@ function sendCommand(command) {
 // Fonction pour afficher la commande dans le terminal
 function displayCommand(command) {
   const outputDiv = document.getElementById('output');
-  outputDiv.innerHTML += `<div><span>> </span>${command}</div>`; // Affiche la commande saisie
-  outputDiv.scrollTop = outputDiv.scrollHeight; // Défiler vers le bas
+  const articleDisplay = document.getElementById('article-display');
+
+  if (articleDisplay.style.display === 'block') {
+    return;
+  }
+
+  outputDiv.innerHTML += `<div><span>> </span>${command}</div>`;
+  outputDiv.scrollTop = outputDiv.scrollHeight;
 }
+
 
 // Fonction pour mettre à jour le terminal avec la sortie
 function updateTerminal(output) {

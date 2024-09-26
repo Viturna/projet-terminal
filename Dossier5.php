@@ -8,8 +8,10 @@
 </head>
 <body>
     <div id="terminal">
-    <div id="progress-bar-container">
+    <div id="loader">
+      <div id="progress-bar-container">
         <div id="progress-bar">0%</div>
+      </div>
     </div>
         <div id="output">Dossier5</div>
         <div id="input-area">

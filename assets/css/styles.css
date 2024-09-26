@@ -63,15 +63,24 @@ body {
 }
 
 /* Barre de chargement en position absolue */
+#loader{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  background-color: #000;
+}
 #progress-bar-container {
-  position: absolute; /* Positionnement absolu pour le centre de la page */
-  top: 50%; /* Positionner à 50% de la hauteur */
-  left: 50%; /* Positionner à 50% de la largeur */
-  transform: translate(-50%, -50%); /* Centrer parfaitement avec une translation */
-  width: 50%; /* Largeur à 50% de la page */
-  background-color: #000; /* Fond gris foncé pour contraster avec la barre verte */
-  border: 2px solid #00ff00; /* Bordure verte rétro */
-  border-radius: 3px; /* Légèrement arrondie */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background-color: #000;
+  border: 2px solid #00ff00;
+  border-radius: 3px;
   height: 25px;
   overflow: hidden; /* Masque tout débordement pour une transition propre */
 }

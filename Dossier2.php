@@ -19,21 +19,24 @@
       <span class="center">Dossier2</span>
       <span id="changeCharacters"></span>
       <div id="article-list">
-        <div class="select">/DOC : [article1]</div>
-        <div class="select">/DOC : [article2]</div>
-        <div class="select">/DOC : [article3]</div>
+        <div class="select">/DOC : [article2-1]</div>
+        <div class="select">/DOC : [article2-2]</div>
+        <div class="select">/DOC : [article2-3]</div>
+        <div class="select">/DOC : [article2-4]</div>
+        <div class="select">/DOC : [article2-5]</div>
+        <div class="select">/DOC : [article2-6]</div>
+        <div class="select">/DOC : [article2-7]</div>
       </div>
       <div id="article-display" style="display: none;">
-        <div id="game">
-
+        <div id="game" class="center">
+          <p>Pour découvrir le contenu de cet article à toi de trouver le mot gagnant !</p>
+          <img id="keyword-image" src="" alt="photo de mot caché" style="height : 400px;">
         </div>
         <div id="article-box" style="display: none;">
-          <div id="message">Mot incorrect. Veuillez réessayer.</div>
           <h2 id="article-title"></h2>
           <p id="article-content"></p>
         </div>
       </div>
-
 
     </div>
     <div id="input-area">

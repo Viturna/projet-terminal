@@ -26,7 +26,7 @@
       <div id="article-display" style="display: none;">
         <div id="game" class="center">
           <p>Pour découvrir le contenu de cet article à toi de trouver le mot gagnant !</p>
-          <img id="morpion-image" src="" alt="photo de morpion" alt="photo de morpion" style="height : 400px;">
+          <img id="keyword-image" src="" alt="photo de morpion" style="height : 400px;">
         </div>
         <div id="article-box" style="display: none;">
           <h2 id="article-title"></h2>

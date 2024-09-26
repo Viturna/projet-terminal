@@ -59,7 +59,7 @@ function loadArticle(fileName) {
 
       if (article.image) {
         image = article.image; // Met à jour l'image de Morpion
-        document.getElementById("morpion-image").src = image; // Met à jour l'élément image dans le DOM
+        document.getElementById("keyword-image").src = image; // Met à jour l'élément image dans le DOM
       }
 
       if (article.key) {

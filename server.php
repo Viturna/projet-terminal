@@ -28,6 +28,28 @@ if (!isset($_SESSION['gameStart'])) {
 
 $current_path = $_SESSION['current_path'];
 
+function checkGameEnd()
+{
+  $requiredFolders = [
+    1 => "Société",
+    2 => "Économie",
+    3 => "Pouvoir",
+    4 => "Temps",
+    5 => "Espace",
+    6 => "Savoir",
+    7 => "Communication",
+  ];
+
+  foreach ($requiredFolders as $number => $name) {
+    if ($_SESSION['folders'][$number] !== $name) {
+      return false; // Si un dossier ne correspond pas, le jeu continue
+    }
+  }
+
+  // Si tous les dossiers correspondent, termine le jeu
+  return true;
+}
+
 // Fonction pour gérer les commandes
 function handleCommand($command)
 {
@@ -103,16 +125,27 @@ function handleCommand($command)
       return "Sessions réinitialisées avec succès.";
 
     case '/rename': // Commande pour renommer un dossier
-      if (isset($command_parts[1]) && isset($command_parts[2])) {
-        $folderNumber = intval($command_parts[1]);
-        $newName = $command_parts[2];
+      if (isset($command_parts[1])) {
+        // Exemple : /rename 1 [Société]
+        preg_match('/\[(.*?)\]/', $command_parts[1], $matches);
+        if (isset($matches[1])) {
+          $folderNumber = intval($command_parts[1][0]); // Obtient le numéro du dossier (1 à 7)
+          $newName = $matches[1]; // Récupère le nouveau nom
 
-        if ($folderNumber >= 1 && $folderNumber <= 7) {
-          $_SESSION['folders'][$folderNumber] = $newName;
+          if ($folderNumber >= 1 && $folderNumber <= 7) {
+            $_SESSION['folders'][$folderNumber] = $newName;
 
-          return json_encode(['action' => 'rename', 'folderNumber' => $folderNumber, 'newName' => $newName]);
+            // Vérifier si le jeu est terminé après le renommage
+            if (checkGameEnd()) {
+              return json_encode(['redirect' => 'endGame.php']); // Redirige vers endGame.php
+            }
+
+            return json_encode(['action' => 'rename', 'folderNumber' => $folderNumber, 'newName' => $newName]);
+          } else {
+            return "Numéro de dossier invalide. Utilisez un numéro entre 1 et 7.";
+          }
         } else {
-          return "Numéro de dossier invalide. Utilisez un numéro entre 1 et 7.";
+          return "Usage : rename [numéro_du_dossier] [nouveau_nom]";
         }
       } else {
         return "Usage : rename [numéro_du_dossier] [nouveau_nom]";

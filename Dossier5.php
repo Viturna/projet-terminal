@@ -13,18 +13,39 @@
         <div id="progress-bar">0%</div>
       </div>
     </div>
-        <div id="output">
-        <img class="logo-bg" src="/assets/img/logo_Onu.svg" alt="">
-        Dossier5
+    <div id="output">
+      <img class="logo-bg" src="/assets/img/logo_Onu.svg" alt="">
+      <span class="center">Dossier5</span>
+      <div id="article-list">
+        <div class="select">/DOC : [article5-1]</div>
+        <div class="select">/DOC : [article5-2]</div>
+        <div class="select">/DOC : [article5-3]</div>
+        <div class="select">/DOC : [article5-4]</div>
+        <div class="select">/DOC : [article5-5]</div>
+        <div class="select">/DOC : [article5-6]</div>
+        <div class="select">/DOC : [article5-7]</div>
       </div>
-        <div id="input-area">
-            <span id="prompt">> </span>
-            <input type="text" id="command-input" autofocus>
+      <div id="article-display" style="display: none;">
+        <div id="game" class="center">
+          <p>Pour découvrir le contenu de cet article, trouve le code à 6 chiffres !</p>
+          <img id="keyword-image" src="" alt="tableau de données" style="height : 200px;">
         </div>
-        <div id="timer"></div>
+        <div id="article-box" style="display: none; width: 1000px">
+          <h2 id="article-title"></h2>
+          <p id="article-content"></p>
+        </div>
+      </div>
+    </div>
+    <div id="input-area">
+      <span id="prompt">> </span>
+      <input type="text" id="command-input">
+    </div>
+    <div id="timer"></div>
     </div>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/articles.js"></script>
+    <script src="assets/js/keyword.js"></script>
     <script src="assets/js/barreChargement.js"></script>
 </body>
 </html>

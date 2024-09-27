@@ -14,7 +14,6 @@
     <img class="logo-bg" src="/assets/img/logo_Onu.svg" alt="">
       <span class="center">Répertoire</span>
       <?php
-      session_start();
       $folders = $_SESSION['folders'] ?? [];
 
       // Afficher uniquement les dossiers 1 à 7

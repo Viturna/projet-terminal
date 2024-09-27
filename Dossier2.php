@@ -33,7 +33,7 @@
           <p>Pour découvrir le contenu de cet article à toi de trouver le mot gagnant !</p>
           <img id="keyword-image" src="" alt="photo de mot caché" style="height : 400px;">
         </div>
-        <div id="article-box" style="display: none;">
+        <div id="article-box" style="display: none; width: 1000px">
           <h2 id="article-title"></h2>
           <p id="article-content"></p>
         </div>

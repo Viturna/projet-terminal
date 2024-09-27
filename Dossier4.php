@@ -32,7 +32,7 @@
           <p>Pour découvrir le contenu de cet article à toi de trouver le mot gagnant !</p>
           <img id="keyword-image" src="" alt="photo de morpion" style="height : 400px;">
         </div>
-        <div id="article-box" style="display: none;">
+        <div id="article-box" style="display: none; width: 1000px">
           <h2 id="article-title"></h2>
           <p id="article-content"></p>
         </div>
@@ -40,7 +40,7 @@
     </div>
     <div id="input-area">
       <span id="prompt">> </span>
-      <input type="text" id="command-input" autofocus>
+      <input type="text" id="command-input">
     </div>
     <div id="timer"></div>
   </div>

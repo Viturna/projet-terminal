@@ -31,7 +31,7 @@
         <div id="game" class="center">
           <canvas id="board"></canvas>
         </div>
-        <div id="article-box" style="display: none;">
+        <div id="article-box" style="display: none; width: 1000px">
           <h2 id="article-title"></h2>
           <p id="article-content"></p>
         </div>

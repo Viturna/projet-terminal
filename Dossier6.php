@@ -31,7 +31,7 @@
           <span id="changeCharacters" data-length="100" data-lines="20" style="white-space: pre;"></span>
         </div>
         <div id="article-box">
-          <h2 id="article-title"></h2>
+          <h2 id="article-title" style="width: 1000px"></h2>
           <p id="article-content"></p>
         </div>
       </div>

@@ -10,8 +10,14 @@
 
 <body>
   <div id="terminal">
+    <div id="loader">
+      <div id="progress-bar-container">
+        <div id="progress-bar">0%</div>
+      </div>
+    </div>
+
     <div id="output">
-      <span class="center">Répertoire</span>
+    <span class="center">Répertoire</span>
       <?php
       session_start();
       $folders = $_SESSION['folders'] ?? [];
@@ -22,19 +28,16 @@
         echo "<p class='folder' id='folder$i'>/DOC:[$folderName]</p>";
       }
       ?>
-      <!-- Dossier 8 qui ne sera pas modifiable -->
-      <p class="folder" id="folder8">/DOC:[Rename]</p>
     </div>
-
-    <!-- <div id="input-area">
-        <span id="prompt">> </span>
-        <input type="text" id="command-input" autofocus>
-    </div> -->
+    <div id="input-area">
+      <span id="prompt">> </span>
+      <input type="text" id="command-input" autofocus>
+    </div>
     <div id="timer"></div>
   </div>
 
-  <script src="assets/js/naviguation.js"></script>
-  <script src="assets/js/renameFolders.js"></script>
+  <script src="assets/js/renameFolder.js"></script>
+  <script src="assets/js/barreChargement.js"></script>
 </body>
 
 </html>

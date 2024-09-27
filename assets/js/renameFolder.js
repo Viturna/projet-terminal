@@ -1,56 +1,80 @@
-const commandInput = document.getElementById("command-input");
-const outputDiv = document.getElementById("output");
-
-// Événement pour gérer l'entrée de commande
-commandInput.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        const command = commandInput.value.trim();
-        commandInput.value = '';
-
-        if (command.startsWith("rename ")) {
-            const args = command.split(" ");
-            if (args.length === 3) {
-                const oldName = args[1];
-                const newName = args[2];
-                renameFolder(oldName, newName);
-            } else {
-                outputDiv.innerHTML += `<p>[ERROR] Utilisation : rename [ancien_nom] [nouveau_nom]</p>`;
-            }
-        } else {
-            outputDiv.innerHTML += `<p>[ERROR] Commande non reconnue.</p>`;
-        }
+// Initialisation des noms de dossiers dans localStorage s'ils n'existent pas encore
+function initializeFolders() {
+  for (let i = 1; i <= 7; i++) {
+    if (!localStorage.getItem(`folder${i}`)) {
+      localStorage.setItem(`folder${i}`, `Dossier${i}`);
     }
+  }
+}
+
+// Mise à jour de l'affichage des dossiers à partir de localStorage
+function updateFolderDisplay() {
+  for (let i = 1; i <= 7; i++) {
+    const folderElement = document.getElementById(`folder${i}`);
+    const folderName = localStorage.getItem(`folder${i}`);
+    if (folderElement && folderName) {
+      folderElement.textContent = `/DOC:[${folderName}]`;
+    }
+  }
+}
+
+// Fonction de renommage de dossier
+function renameFolder(folderNumber, newName) {
+  if (folderNumber < 1 || folderNumber > 7) {
+    alert("Numéro de dossier invalide. Veuillez entrer un numéro entre 1 et 7.");
+    return;
+  }
+
+  // Mettre à jour le localStorage
+  localStorage.setItem(`folder${folderNumber}`, newName);
+  updateFolderDisplay();
+
+  // Envoyer la commande au serveur
+  sendRenameCommand(folderNumber, newName);
+}
+
+// Fonction pour envoyer la commande de renommage au serveur
+function sendRenameCommand(folderNumber, newName) {
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', 'server.php', true);
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      const response = xhr.responseText.trim();
+      // Vous pouvez gérer la réponse du serveur ici si nécessaire
+      console.log(response);
+    }
+  };
+
+  // Envoie la commande de renommage au serveur
+  xhr.send(`command=rename ${folderNumber} ${encodeURIComponent(newName)}`);
+}
+
+// Gestion de la commande
+document.getElementById('command-input').addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+    const command = this.value.trim();
+    const commandParts = command.split(' ');
+
+    if (commandParts[0] === 'rename' && commandParts.length === 3) {
+      const folderNumber = parseInt(commandParts[1], 10);
+      const newName = commandParts[2];
+
+      if (!isNaN(folderNumber) && newName.length > 0) {
+        renameFolder(folderNumber, newName);
+      } else {
+        alert('Commande invalide. Utilisez : rename (numéro du dossier) (nouveau nom)');
+      }
+    } else {
+      alert('Commande non reconnue.');
+    }
+
+    this.value = '';
+  }
 });
 
-// Fonction pour renommer le dossier
-function renameFolder(oldName, newName) {
-    fetch('renameFolder.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: `oldName=${encodeURIComponent(oldName)}&newName=${encodeURIComponent(newName)}`
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            outputDiv.innerHTML += `<p>[SUCCESS] Le dossier "${oldName}" a été renommé en "${newName}".</p>`;
-            updateFolderDisplay(oldName, newName); // Met à jour l'affichage
-        } else {
-            outputDiv.innerHTML += `<p>[ERROR] ${data.message}</p>`;
-        }
-    })
-    .catch(error => {
-        console.error('Erreur lors de la communication avec le serveur:', error);
-    });
-}
-
-// Fonction pour mettre à jour l'affichage des dossiers
-function updateFolderDisplay(oldName, newName) {
-    const folders = document.querySelectorAll('#output .folder');
-    folders.forEach(folder => {
-        if (folder.textContent.includes(oldName)) {
-            folder.textContent = folder.textContent.replace(oldName, newName);
-        }
-    });
-}
+document.addEventListener('DOMContentLoaded', function () {
+  initializeFolders();
+  updateFolderDisplay();
+});

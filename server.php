@@ -1,7 +1,17 @@
 <?php
 
 session_start();
-
+if (!isset($_SESSION['folders'])) {
+  $_SESSION['folders'] = [
+    1 => "Dossier1",
+    2 => "Dossier2",
+    3 => "Dossier3",
+    4 => "Dossier4",
+    5 => "Dossier5",
+    6 => "Dossier6",
+    7 => "Dossier7",
+  ];
+}
 // Initialiser le répertoire de travail si non défini
 if (!isset($_SESSION['current_path'])) {
   $_SESSION['current_path'] = getcwd(); // Définit le répertoire actuel comme le point de départ
@@ -12,6 +22,9 @@ if (!isset($_SESSION['path_history'])) {
   $_SESSION['path_history'] = []; // Historique des répertoires
 }
 
+if (!isset($_SESSION['gameStart'])) {
+  $_SESSION['gameStart'] = false;
+}
 
 $current_path = $_SESSION['current_path'];
 
@@ -29,6 +42,14 @@ function handleCommand($command)
 
     case 'cd': // Commande pour changer de répertoire ou rediriger vers une page
       if (isset($command_parts[1])) {
+        if (isset($command_parts[1]) && $command_parts[1] === 'directory') { // Vérifie si le dossier est "directory"
+          if (!$_SESSION['gameStart']) {
+            $_SESSION['gameStart'] = true; // Démarre le jeu
+            $_SESSION['start_time'] = microtime(true); // Démarre le chronomètre
+          } else {
+            return "Le jeu est déjà en cours.";
+          }
+        }
         $target = $command_parts[1];
 
         // Vérifie si la cible est une page existante
@@ -76,24 +97,27 @@ function handleCommand($command)
     case 'dinnerborne': // Commande pour inverser l'affichage
       return json_encode(['message' => '!', 'action' => 'toggleDinnerborne']);
 
+    case 'reset': // Commande pour réinitialiser les sessions
+      session_unset();
+      session_destroy();
+      return "Sessions réinitialisées avec succès.";
+
     case 'rename': // Commande pour renommer un dossier
       if (isset($command_parts[1]) && isset($command_parts[2])) {
-        $old_name = $command_parts[1];
-        $new_name = $command_parts[2];
+        $folderNumber = intval($command_parts[1]);
+        $newName = $command_parts[2];
 
-        // Vérifie si le dossier existe dans les noms enregistrés
-        if (isset($_SESSION['folder_names'][$old_name])) {
-          // Renomme le dossier
-          $_SESSION['folder_names'][$new_name] = $_SESSION['folder_names'][$old_name];
-          unset($_SESSION['folder_names'][$old_name]); // Supprime l'ancien nom
+        if ($folderNumber >= 1 && $folderNumber <= 7) {
+          $_SESSION['folders'][$folderNumber] = $newName;
 
-          return "Dossier renommé de '$old_name' en '$new_name'.";
+          return json_encode(['action' => 'rename', 'folderNumber' => $folderNumber, 'newName' => $newName]);
         } else {
-          return "Dossier '$old_name' non trouvé.";
+          return "Numéro de dossier invalide. Utilisez un numéro entre 1 et 7.";
         }
       } else {
-        return "Usage : rename [ancien_nom] [nouveau_nom]";
+        return "Usage : rename [numéro_du_dossier] [nouveau_nom]";
       }
+
 
     default:
       return "Commande non reconnue.";
@@ -104,5 +128,5 @@ function handleCommand($command)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $command = $_POST['command'] ?? '';
   $output = handleCommand(trim($command));
-  echo $output; // Renvoie la sortie de la commande
+  echo $output;
 }

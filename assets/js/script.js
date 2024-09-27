@@ -33,6 +33,12 @@ function sendCommand(command) {
           updateTerminal(jsonResponse.message);
         } else if (jsonResponse.action === 'reload') {
           window.location.reload();
+        } else if (jsonResponse.action === 'rename') {
+          const folderElement = document.getElementById(`folder${jsonResponse.folderNumber}`);
+          if (folderElement) {
+            folderElement.textContent = `/DOC:[${jsonResponse.newName}]`;
+          }
+          updateTerminal(`Dossier ${jsonResponse.folderNumber} renommé en ${jsonResponse.newName}`);
         } else {
           updateTerminal(jsonResponse); // Met à jour le terminal avec la sortie
         }

@@ -1,6 +1,8 @@
 {
     "title": "titre",
     "content": "contenu",
+    "image": "../assets/img/tab6.png",
+    "key": "146922",
     "game": true
   }
   

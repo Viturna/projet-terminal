@@ -44,15 +44,14 @@ function handleCommand($command)
       if (isset($command_parts[1])) {
         if (isset($command_parts[1]) && $command_parts[1] === 'directory') { // Vérifie si le dossier est "directory"
           if (!$_SESSION['gameStart']) {
-            $_SESSION['gameStart'] = true; // Démarre le jeu
-            $_SESSION['start_time'] = microtime(true); // Démarre le chronomètre
+            $_SESSION['gameStart'] = true; 
+            $_SESSION['start_time'] = microtime(true); 
           } else {
             return "Le jeu est déjà en cours.";
           }
         }
         $target = $command_parts[1];
 
-        // Vérifie si la cible est une page existante
         if (file_exists($target . '.php')) {
           return json_encode(['redirect' => $target . '.php']); // Retourne une réponse JSON avec la redirection
         }

@@ -14,6 +14,7 @@
       </div>
     </div>
         <div id="output">
+        <img class="logo-bg" src="/assets/img/logo_Onu.svg" alt="">
             Dossier3
         </div>
         <!-- <div id="input-area">

@@ -13,7 +13,10 @@
         <div id="progress-bar">0%</div>
       </div>
     </div>
-        <div id="output">Dossier5</div>
+        <div id="output">
+        <img class="logo-bg" src="/assets/img/logo_Onu.svg" alt="">
+        Dossier5
+      </div>
         <div id="input-area">
             <span id="prompt">> </span>
             <input type="text" id="command-input" autofocus>

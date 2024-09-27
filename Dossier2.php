@@ -16,6 +16,7 @@
       </div>
     </div>
     <div id="output">
+    <img class="logo-bg" src="/assets/img/logo_Onu.svg" alt="">
       <span class="center">Dossier2</span>
       <span id="changeCharacters"></span>
       <div id="article-list">

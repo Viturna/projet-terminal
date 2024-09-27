@@ -64,8 +64,15 @@ body {
 #article-box{
   display: none;
 }
+.logo-bg {
+  opacity: 0.5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-/* Barre de chargement en position absolue */
+
 #loader{
   width: 100vw;
   height: 100vh;

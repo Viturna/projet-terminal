@@ -11,6 +11,7 @@
 <body>
   <div id="terminal">
     <div id="output">
+    <img class="logo-bg" src="/assets/img/logo_Onu.svg" alt="">
       <span class="center">Répertoire</span>
       <?php
       session_start();

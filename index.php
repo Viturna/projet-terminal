@@ -7,16 +7,24 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <title>Simulateur de Terminal</title>
   <style>
-        #output {
-            white-space: pre-wrap;
-        }
-    </style>
+    #output {
+      white-space: pre-wrap;
+    }
+
+    #timer {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+  </style>
 </head>
 
 <body>
   <div id="terminal">
     <div id="output">
-        <img class="logo-bg" src="/assets/img/logo_Onu.svg" alt="">
+      <img class="logo-bg" src="/assets/img/logo_Onu.svg" alt="">
+      <div class="text" id="dynamicText"></div>
+      <div id="timer"></div>
     </div>
     <script>
       const text = `Programme 24 Humanity. Save. Program

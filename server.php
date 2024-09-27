@@ -36,11 +36,11 @@ function handleCommand($command)
   $main_command = $command_parts[0];
 
   switch ($main_command) {
-    case 'ls': // Commande pour lister les fichiers/dossiers
+    case '/ls': // Commande pour lister les fichiers/dossiers
       $files = scandir($current_path);
       return implode("\n", array_diff($files, ['.', '..'])); // Filtre les dossiers "." et ".."
 
-    case 'cd': // Commande pour changer de répertoire ou rediriger vers une page
+    case '/cd': // Commande pour changer de répertoire ou rediriger vers une page
       if (isset($command_parts[1])) {
         if (isset($command_parts[1]) && $command_parts[1] === 'directory') { // Vérifie si le dossier est "directory"
           if (!$_SESSION['gameStart']) {
@@ -70,7 +70,7 @@ function handleCommand($command)
         return "Usage : cd [nom_du_dossier ou nom_de_la_page]";
       }
 
-    case 'back': // Commande pour revenir à la page précédente
+    case '/back': // Commande pour revenir à la page précédente
       if (count($_SESSION['path_history']) > 0) {
         $_SESSION['current_path'] = array_pop($_SESSION['path_history']);
         $current_path = $_SESSION['current_path'];
@@ -79,30 +79,30 @@ function handleCommand($command)
         return "Pas d'historique pour revenir en arrière.";
       }
 
-    case 'exit':
+    case '/exit':
       return json_encode(['action' => 'reload']);
 
-    case 'pwd': // Commande pour afficher le répertoire actuel
+    case '/pwd': // Commande pour afficher le répertoire actuel
       return $current_path;
 
-    case 'help': // Commande pour afficher les commandes disponibles
+    case '/help': // Commande pour afficher les commandes disponibles
       return "Commandes disponibles : ls, cd, pwd, echo, back, help";
 
-    case 'home': // Commande pour rediriger vers index.php
+    case '/home': // Commande pour rediriger vers index.php
       return json_encode(['redirect' => 'index.php']);
 
-    case 'dinnerbone': // Commande pour inverser l'affichage
+    case '/dinnerbone': // Commande pour inverser l'affichage
       return json_encode(['message' => 'L\'affichage a été inversé!', 'action' => 'toggleDinnerbone']);
 
-    case 'dinnerborne': // Commande pour inverser l'affichage
+    case '/dinnerborne': // Commande pour inverser l'affichage
       return json_encode(['message' => '!', 'action' => 'toggleDinnerborne']);
 
-    case 'reset': // Commande pour réinitialiser les sessions
+    case '/reset': // Commande pour réinitialiser les sessions
       session_unset();
       session_destroy();
       return "Sessions réinitialisées avec succès.";
 
-    case 'rename': // Commande pour renommer un dossier
+    case '/rename': // Commande pour renommer un dossier
       if (isset($command_parts[1]) && isset($command_parts[2])) {
         $folderNumber = intval($command_parts[1]);
         $newName = $command_parts[2];

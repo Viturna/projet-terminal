@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   document.addEventListener('keydown', function (event) {
     if (event.code === 'Space') {
-      progress += 10;
+      progress += 15;
     }
   });
   updateProgressBar();

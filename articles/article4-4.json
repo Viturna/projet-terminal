@@ -2,6 +2,7 @@
   "title": "'kairos' et 'chronos'",
   "content": "Dans la Grèce antique, le temps n'était pas qu'une simple ligne continue. Il était une danse entre deux réalités, Chronos et Kairos. Chronos, c'est le temps que nous mesurons, celui des horloges et des calendriers. Il avance, inarrêtable, comme un fleuve qui ne s’arrête jamais. C’est la routine, les secondes qui passent, la cadence de nos journées. Mais il y a aussi Kairos, ce temps qui représente l'instant décisif, le moment précis où l'action doit être prise. Contrairement à *Chronos*, qui s'écoule de manière constante, Kairos se manifeste de manière imprévisible, c’est l’opportunité qui se présente brièvement, le moment où une décision ou une action peut avoir un impact majeur. Dans une réunion, un projet, ou une conversation, Kairos est ce moment crucial où agir fait toute la différence.Ces deux conceptions ne s'opposent pas, elles se complètent. Chronos nous donne le cadre, l'ordre des choses, tandis que Kairos nous pousse à prendre les bonnes décisions au bon moment. Dans notre vie quotidienne, souvent dominée par les horaires et la productivité (Chronos), il est essentiel de reconnaître ces moments de Kairos qui peuvent transformer une situation ou donner un sens particulier à nos actions.",
   "image": "../assets/img/morpion2diff2.png",
-  "key": "rond"
+  "key": "rond",
+  "game": true
   }
   

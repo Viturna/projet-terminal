@@ -1,6 +1,8 @@
 {
     "title": "titre",
     "content": "contenu",
+    "image": "../assets/img/poisson_ascii.png",
+    "key": "poisson",
     "game": true
   }
   

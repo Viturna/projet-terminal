@@ -2,6 +2,7 @@
   "title": "Article 4",
   "content": "Je suis diff",
   "image": "../assets/img/morpion1diff4.png",
-  "key": "croix"
+  "key": "croix",
+  "game": true
 }
   

@@ -19,10 +19,13 @@
       <img class="logo-bg" src="/assets/img/logo_Onu.svg" alt="">
       <span class="center">Dossier4</span>
       <div id="article-list">
-        <div class="select">/DOC : [article4]</div>
-        <div class="select">/DOC : [article5]</div>
-        <div class="select">/DOC : [article6]</div>
+        <div class="select">/DOC : [article4-1]</div>
+        <div class="select">/DOC : [article4-2]</div>
+        <div class="select">/DOC : [article4-3]</div>
         <div class="select">/DOC : [article4-4]</div>
+        <div class="select">/DOC : [article4-5]</div>
+        <div class="select">/DOC : [article4-6]</div>
+        <div class="select">/DOC : [article4-7]</div>
       </div>
       <div id="article-display" style="display: none;">
         <div id="game" class="center">

@@ -2,5 +2,6 @@
   "title": "Temps cyclique et linéaire",
   "content": "Notre façon de voir le temps dépend beaucoup de la culture dans laquelle on a grandi. En Occident, on a tendance à voir le temps comme une ligne droite : il y a un début, un milieu, et une fin. Cette idée vient surtout des traditions judéo-chrétiennes, où la vie est perçue comme un voyage avec un but final. On avance donc vers un objectif, un peu comme une flèche qui va droit vers sa cible. Mais dans d’autres cultures, comme celles de l’hindouisme ou chez les peuples autochtones, la perception du temps est complètement différente. Le temps est vu comme cyclique, un cercle qui se répète sans cesse. Il n'y a pas vraiment de début ni de fin, juste des cycles de naissance, de mort, et de renaissance. Dans cette vision, tout est lié, et ce qu’on fait dans cette vie a un impact sur la prochaine, d’où l’importance de concepts comme le karma ou la réincarnation. Contrairement à la vision linéaire, où il y a souvent une certaine pression pour « avancer » ou « accomplir » des choses, la notion de temps cyclique apporte une sorte de sérénité. Chaque fin est aussi un nouveau départ, et on a toujours une autre chance de recommencer. C’est une approche plus fluide, où on n’est pas pressé par une échéance finale. En gros, on a tout le temps du monde pour apprendre, grandir et évoluer. Une manière bien différente de vivre, non ?",
   "image": "../assets/img/morpion1diff1.png",
-  "key": "croix"
+  "key": "croix",
+  "game": true
 }
